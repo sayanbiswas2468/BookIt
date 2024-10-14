@@ -27,7 +27,7 @@ export const sendWelcomeEmail = async (email, name) => {
             template_uuid: "d3c3cebd-2ead-45e8-9ebf-b514686a1759",
             template_variables: {
                 name: "name",
-                company_info_name: "Train Booking"
+                company_info_name: "Auth Company"
             }
         })
 

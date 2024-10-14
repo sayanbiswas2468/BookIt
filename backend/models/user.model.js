@@ -1,4 +1,5 @@
-import mongoose from "mongoose"
+import mongoose, { Mongoose } from "mongoose";
+
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -25,8 +26,9 @@ const userSchema = new mongoose.Schema({
     resetPasswordExpiresAt: Date,
     verificationToken: String,
     verificationTokenExpiresAt: Date,
-}, {
-    timestamps: true
-})
+},
+    {
+        timestamps: true
+    })
 
-export const User = mongoose.model("User", userSchema)
+export const User = mongoose.model('User', userSchema)

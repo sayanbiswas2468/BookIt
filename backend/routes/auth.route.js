@@ -1,11 +1,11 @@
 import express from 'express'
-import { login, logout, signUp, verifyEmail, forgotPassword, resetPassword, checkAuth } from '../controllers/user.controller.js'
+import { login, logout, signup, verifyEmail, forgotPassword, resetPassword, checkAuth } from '../controllers/auth.controllers.js'
 import { verifyToken } from '../middleware/verifyToken.js'
 
 const router = express.Router()
 
 router.get("/check-auth", verifyToken, checkAuth)
-router.post("/signup", signUp)
+router.post("/signup", signup)
 router.post("/login", login)
 router.post("/logout", logout)
 
