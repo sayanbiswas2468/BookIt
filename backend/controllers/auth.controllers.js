@@ -1,6 +1,5 @@
 import bcryptjs from "bcryptjs";
 import crypto from "crypto";
-
 import { generateTokenAndSetCookie } from "../utils/generateTokenAndSetCookie.js";
 import {
     sendPasswordResetEmail,
@@ -9,10 +8,11 @@ import {
     sendWelcomeEmail,
 } from "../mailtrap/emails.js";
 import { User } from "../models/user.model.js";
+import dotenv from "dotenv";
 
+dotenv.config()
 export const signup = async (req, res) => {
     const { email, password, name } = req.body;
-
     try {
         if (!email || !password || !name) {
             throw new Error("All fields are required");
@@ -38,7 +38,6 @@ export const signup = async (req, res) => {
 
         await user.save();
 
-        // jwt
         generateTokenAndSetCookie(res, user._id);
 
         await sendVerificationEmail(user.email, verificationToken);
@@ -143,7 +142,6 @@ export const forgotPassword = async (req, res) => {
         await user.save();
 
         await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
-
         res.status(200).json({ success: true, message: "Password reset link sent to your email" });
     } catch (error) {
         console.log("Error in forgotPassword ", error);
