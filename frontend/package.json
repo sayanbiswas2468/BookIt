@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/icons-material": "^6.1.6",
     "@mui/x-date-pickers": "^7.22.2",
     "dayjs": "^1.11.13",
     "framer-motion": "^11.11.1",
