@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-heading{
+    @apply font-Host text-white
+}

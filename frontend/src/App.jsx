@@ -44,12 +44,8 @@ function App() {
 
   return (
     <div
-      className='min-h-screen bg-gradient-to-br
-    from-[#2730F2] via-[#27F1F2] to-[#2771F2] flex items-center justify-center relative overflow-hidden'
+      className='min-h-screen overflow-hidden'
     >
-      <FloatingShape color='bg-[#701a75]' size='w-64 h-64' top='-5%' left='10%' delay={0} />
-      <FloatingShape color='bg-[#facc15]' size='w-48 h-48' top='70%' left='80%' delay={5} />
-      <FloatingShape color='bg-lime-500' size='w-32 h-32' top='40%' left='-10%' delay={2} />
       <Routes>
         <Route
           path='/'
