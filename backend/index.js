@@ -8,7 +8,10 @@ import { connectDB } from "./db/connectDB.js";
 
 import authRoutes from "./routes/auth.route.js";
 
+<<<<<<< HEAD
 import trainRoutes from './routes/train.route.js'
+=======
+>>>>>>> b601b808f445c4220f683aa1a8c7cfda08b5b419
 dotenv.config();
 
 const app = express();
@@ -22,8 +25,11 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 
+<<<<<<< HEAD
 app.use("/api/train",trainRoutes)
 
+=======
+>>>>>>> b601b808f445c4220f683aa1a8c7cfda08b5b419
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/frontend/dist")));
     app.get("*", (req, res) => {

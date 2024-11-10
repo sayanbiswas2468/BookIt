@@ -42,7 +42,6 @@ const trainSchema = new mongoose.Schema({
 },
     {
         timestamps: { createdAt: true, updatedAt: true }
-
     }
 )
 export const Train = mongoose.model('Train', trainSchema)
