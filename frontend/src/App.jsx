@@ -1,15 +1,14 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage";
-import EmailVerificationPage from "./pages/EmailVerificationPage";
-import DashboardPage from "./pages/DashboardPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
-import LoadingSpinner from "./components/LoadingSpinner";
-import { Toaster } from "react-hot-toast";
-import { useAuthStore } from "./store/authStore";
 import { useEffect } from "react";
-import FloatingShape from "./components/FLoatingShape";
+import { Toaster } from "react-hot-toast";
+import { Navigate, Route, Routes } from "react-router-dom";
+import LoadingSpinner from "./components/LoadingSpinner";
+import DashboardPage from "./pages/DashboardPage";
+import EmailVerificationPage from "./pages/EmailVerificationPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import LoginPage from "./pages/LoginPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
+import SignUpPage from "./pages/SignUpPage";
+import { useAuthStore } from "./store/authStore";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, user } = useAuthStore();

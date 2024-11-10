@@ -1,4 +1,4 @@
-import mongoose, { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -22,6 +22,16 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    bookingHistory: [
+        {
+            bookingId:String,
+            date:Date,
+            destination:String,
+            amount:Number,
+            status:String
+        }
+
+    ],
     resetPasswordToken: String,
     resetPasswordExpiresAt: Date,
     verificationToken: String,
