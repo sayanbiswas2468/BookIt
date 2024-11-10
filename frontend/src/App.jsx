@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { Navigate, Route, Routes } from "react-router-dom";
@@ -9,21 +8,12 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import LoginPage from "./pages/LoginPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import SignUpPage from "./pages/SignUpPage";
+import TrainSearch from "./pages/TrainSearch";
+import LocatePlatform from "./pages/LocatePlatform";
+import StationSearch from "./pages/StationSearch";
+import SeatAvailability from "./pages/SeatAvailability";
+import Footer from "./components/Footer";
 import { useAuthStore } from "./store/authStore";
-=======
-import { Navigate, Route, Routes } from "react-router-dom";
-import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage";
-import EmailVerificationPage from "./pages/EmailVerificationPage";
-import DashboardPage from "./pages/DashboardPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
-import LoadingSpinner from "./components/LoadingSpinner";
-import { Toaster } from "react-hot-toast";
-import { useAuthStore } from "./store/authStore";
-import { useEffect } from "react";
-import FloatingShape from "./components/FLoatingShape";
->>>>>>> b601b808f445c4220f683aa1a8c7cfda08b5b419
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, user } = useAuthStore();
@@ -57,9 +47,7 @@ function App() {
   if (isCheckingAuth) return <LoadingSpinner />;
 
   return (
-    <div
-      className='min-h-screen overflow-hidden'
-    >
+    <div className='min-h-screen overflow-hidden'>
       <Routes>
         <Route
           path='/'
@@ -94,7 +82,6 @@ function App() {
             </RedirectAuthenticatedUser>
           }
         />
-
         <Route
           path='/reset-password/:token'
           element={
@@ -103,11 +90,21 @@ function App() {
             </RedirectAuthenticatedUser>
           }
         />
+        
+        {/* New Routes for Train Search Pages */}
+        <Route path='/train-search' element={<TrainSearch />} />
+        <Route path='/locate-platform' element={<LocatePlatform />} />
+        <Route path='/station-search' element={<StationSearch />} />
+        <Route path='/seat-availability' element={<SeatAvailability />} />
+        
+        {/* Default Redirect for Undefined Routes */}
         <Route path='*' element={<Navigate to='/' replace />} />
       </Routes>
+      
       <Toaster />
     </div>
   );
 }
+
 
 export default App;
