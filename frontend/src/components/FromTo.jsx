@@ -52,7 +52,7 @@ const FromTo = () => {
                 </div>
 
                 <button className='bg-blue-600 rounded-[15px] ml-[5%] p-3 relative hover:bg-blue-500'>
-                    <h1 className='font-Host font-medium text-white'>Search Train</h1>
+                    <h1 className='font-Host font-medium text-white'>Search Train </h1>
                 </button>
             </div>
         </div>

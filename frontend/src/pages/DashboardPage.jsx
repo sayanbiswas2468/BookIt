@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import FromTo from "../components/FromTo";
 import Header from "../components/Header";
 import { useAuthStore } from "../store/authStore";
@@ -17,6 +18,7 @@ const DashboardPage = () => {
         >
             <Header />
             <FromTo />
+            <Footer />
         </div>
     );
 };
